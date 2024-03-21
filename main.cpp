@@ -4,6 +4,14 @@
 
 using namespace std;
 
+bool cheatCode(std::string input, size_t number) {
+	if (input.compare("give me monkey") == 0) {
+		std::cout << "Number: " << number << std::endl;
+		return true;
+	}
+	return false;
+}
+
 void main() {
 	srand(time(0));
 	const size_t MAX_RATE = 10000;
@@ -17,10 +25,8 @@ void main() {
 		getline(cin, input);
 		if (input == "q")
 			continue;
-		if (input.compare("give me monkey") == 0) {
-			cout << "Number: " << number << endl;
+		if (cheatCode(input, number))
 			continue;
-		}
 		try {
 			inputInt = stoi(input);
 		}
